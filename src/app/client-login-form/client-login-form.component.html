@@ -1,0 +1,160 @@
+<section class="background-gradient overflow-hidden">
+  <style>
+    section {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background-gradient {
+      background: linear-gradient(to right, #000000, #14213d);
+    }
+
+    .color-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fca311;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    .logFormContainer {
+      margin-top: 7%;
+    }
+
+    .card {
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .form-label {
+      color: #ffffff;
+    }
+
+    .form-control {
+      background-color: transparent;
+      color: #ffffff;
+      border: none;
+      border-bottom: 1px solid #ffffff;
+      border-radius: 0;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #f44336;
+    }
+
+    .btn-primary {
+      background-color: #fca311;
+      border-color: #fca311;
+      color: #ffffff;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #e5e5e5;
+      border-color: #e5e5e5;
+      color: #14213d;
+    }
+
+    .alert-warning {
+      color: #f44336;
+    }
+  </style>
+
+  <div class="color-overlay"></div>
+
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-xxl-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight text-center" style="color: #ffffff">
+          Welcome <span style="color: #fca311">Jabak_Alah </span> Clients<br />
+          <span style="color: #a3cef1">Login</span>
+        </h1>
+        <p class="mb-4 opacity-70" style="color: #ffffff">
+          Discover a new way to manage your finances with Jabak_Alah.
+          Sign in to your account to access a wide range of services
+          and features.
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative pt-5 logFormContainer">
+        <div class="card">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form #form="" (ngSubmit)="submitClientLogInForm(form)">
+              <div class="mb-4">
+                <label class="form-label" for="login">Log In</label>
+                <input
+                  [(ngModel)]="client.logIn"
+                  #LogIn="ngModel"
+                  name="login"
+                  type="text"
+                  id="login"
+                  placeholder="Enter your phone number"
+                  class="form-control"
+                  required
+                  minlength="5"
+                  maxlength="45"
+                />
+                <div *ngIf="LogIn.touched && !LogIn.valid">
+                  <div class="alert alert-warning">
+                    <span *ngIf="(LogIn.errors && LogIn.errors.required)">
+                      You must provide information for this field.
+                    </span>
+                    <span *ngIf="(LogIn.errors && LogIn.errors.pattern)">
+                      Login format is not valid. Example: 0614151812
+                    </span>
+                    <span *ngIf="(LogIn.errors && LogIn.errors.minlength)">
+                      Error: This field must contain at least 5 characters.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  [(ngModel)]="client.password"
+                  #Password="ngModel"
+                  name="password"
+                  placeholder="Password"
+                  required
+                  minlength="5"
+                />
+                <div *ngIf="(Password.touched && !Password.valid)">
+                  <div class="alert alert-warning" *ngIf="(Password.errors && Password.errors.required)">
+                    You must provide information for this field.
+                  </div>
+                  <div class="alert alert-warning" *ngIf="(Password.errors && Password.errors.minlength)">
+                    Your password should be at least 8 characters long and include numbers.
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-block mb-4"
+                id="btnLogin"
+                [disabled]="!(LogIn.valid && Password.valid)"
+              >
+                Sign In
+              </button>
+              <div class="form-outline mb-4">
+                <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
+                  Login failed: {{ errorMessage }}
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

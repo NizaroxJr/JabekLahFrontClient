@@ -1,0 +1,43 @@
+<div >
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <h2 class="font-weight-bold">JABEKLAH</h2>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+    <div class="offcanvas-header text-center">
+      <h5 class="offcanvas-title mb-0 font-size-lg">JABEKLAH</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="clientHome/profile">Profile</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link active text-white" aria-current="page" href="clientHome/payBills">Pay Bills</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link active text-white" aria-current="page" href="clientHome/changePassword">change password</a>
+        </li>
+        <li class="nav-item">
+          <!-- Topbar Navbar -->
+          <div class="topbar-divider d-none d-sm-block"></div>
+          <!-- Nav Item - User Information -->
+          <div class="dropdown-divider"></div>
+          <div class="p-1">
+            <button class="btn btn-outline-light w-100 mt-1 bg-black" (click)="onLogout()" style="color: white;">
+              <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-white"></i>
+              Logout
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

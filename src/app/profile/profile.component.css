@@ -1,0 +1,84 @@
+ 
+  
+  .container {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+	background-position: center top;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: transparent;
+  }
+  
+  .card {
+	width: 500px;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	padding: 2rem;
+	text-align: center;
+  }
+  
+  .profile-image {
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	object-fit: cover;
+	margin-bottom: 1rem;
+  }
+  
+  .info-container {
+	margin-bottom: 1rem;
+	
+  }
+  
+  .name {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	margin-bottom: 0.5rem;
+  }
+  
+  .mail {
+	font-size: 17px;
+	color: #fff;
+	opacity: 0.9;
+	margin-bottom: 1rem;
+	font-weight: bold;
+}
+
+  
+  
+  .form-container {
+	text-align: left;
+  }
+  
+  .form-field {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+  }
+  
+  .label-container {
+	background-color: #FFFFFF;
+	padding: 0.5rem;
+	border-radius: 5px;
+	margin-right: 1rem;
+  }
+  
+  .label {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+  }
+  
+  .value-container {
+	background-color: #FCA311;
+	padding: 0.5rem;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #FFFFFF;
+  }
+  
